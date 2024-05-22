@@ -49,7 +49,7 @@ describe("Register service", () => {
       password: "123456",
     });
 
-    expect(() =>
+    await expect(() =>
       registerService.execute({
         name: "farofinha 123",
         email,
