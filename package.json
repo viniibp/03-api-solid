@@ -2,7 +2,6 @@
   "name": "03-api-solid",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "src/server.ts",
   "scripts": {
     "start:dev": "tsx --watch src/server.ts",
@@ -13,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "2.4.6",
     "@types/node": "20.12.12",
     "prisma": "5.14.0",
     "tsup": "8.0.2",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.14.0",
+    "bcryptjs": "2.4.3",
     "dotenv": "16.4.5",
     "fastify": "4.27.0",
     "zod": "3.23.8"
