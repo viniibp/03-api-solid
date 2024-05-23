@@ -1,4 +1,4 @@
-import { UsersRepository } from "@/repositories/users-repository.interface";
+import { UsersRepository } from "@/repositories/users-repository";
 import { compare } from "bcryptjs";
 
 import { InvalidCredentialsError } from "./errors/invalid-credentials-error";

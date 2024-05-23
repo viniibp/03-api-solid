@@ -1,4 +1,4 @@
-import { UsersRepository } from "@/repositories/users-repository.interface";
+import { UsersRepository } from "@/repositories/users-repository";
 import { ResouceNotFoundError } from "./errors/resource-not-found";
 
 interface GetUserProfileServiceRequest {
