@@ -2,7 +2,7 @@ import { CheckIn, Prisma } from "@prisma/client";
 import { randomUUID } from "node:crypto";
 import dayjs from "dayjs";
 
-import { CheckInsRepository } from "../check-ins.repository";
+import { CheckInsRepository } from "../check-ins-repository";
 
 export class InMemoryCheckInsRepository implements CheckInsRepository {
   public checkIns: CheckIn[] = [];
@@ -43,5 +43,12 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     return this.checkIns
       .filter((checkIn) => checkIn.user_id === userId)
       .slice((page - 1) * 20, page * 20);
+  }
+
+  async countByUserId(userId: string): Promise<number> {
+    const userCheckInsCounter = this.checkIns.filter(
+      (checkIn) => checkIn.user_id === userId
+    ).length;
+    return userCheckInsCounter;
   }
 }

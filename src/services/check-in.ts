@@ -1,4 +1,4 @@
-import { CheckInsRepository } from "@/repositories/check-ins.repository";
+import { CheckInsRepository } from "@/repositories/check-ins-repository";
 import { GymsRepository } from "@/repositories/gyms-repository";
 
 import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
