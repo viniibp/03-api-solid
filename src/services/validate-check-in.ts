@@ -1,5 +1,7 @@
+import dayjs from "dayjs";
 import { CheckInsRepository } from "@/repositories/check-ins-repository";
 import { ResouceNotFoundError } from "./errors/resource-not-found";
+import { LateCheckInValidationError } from "./errors/late-check-in-validation-error";
 
 interface ValidateCheckInServiceRequest {
   checkInId: string;
@@ -27,7 +29,16 @@ export class ValidateCheckInService {
       throw new ResouceNotFoundError();
     }
 
-    checkIn.validated_at = new Date()
+    const distanceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
+      checkIn.created_at,
+      "minutes"
+    );
+
+    if (distanceInMinutesFromCheckInCreation > 20) {
+      throw new LateCheckInValidationError();
+    }
+
+    checkIn.validated_at = new Date();
 
     await this.checkInsRepository.save(checkIn);
 
