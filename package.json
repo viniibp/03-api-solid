@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server.ts",
+  "packageManager": "pnpm@9.1.2",
   "scripts": {
     "start:dev": "tsx --watch src/server.ts",
     "start": "node build/server.js",
