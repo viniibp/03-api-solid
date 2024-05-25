@@ -14,6 +14,7 @@ interface AuthenticateServiceResponse {
     name: string;
     email: string;
     password_hash: string;
+    role: 'ADMIN' | 'MEMBER',
     created_at: Date;
   };
 }
