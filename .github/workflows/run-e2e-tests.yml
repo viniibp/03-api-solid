@@ -16,7 +16,7 @@ jobs:
           POSTGRESQL_USERNAME: docker
           POSTGRESQL_PASSWORD: docker
           POSTGRESQL_DATABASE: apisolid
-          
+
     steps:
       - uses: actions/checkout@v4
 
